@@ -1,189 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fábio Carvalho - Software Engineer</title>
     <meta name="description" content="Professional business card for Fábio Carvalho">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://wallpapercave.com/wp/wp6690963.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Exo 2', sans-serif;
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .card-container {
+        width: 100%;
+        max-width: 510px;
+        perspective: 1000px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .card {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.86%;
+        transform-style: preserve-3d;
+        transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: flipCard 16s infinite cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-face-front {
+        background-color: #ffffff;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+
+      .card-face-back {
+        background-color: #00B2E3;
+        transform: rotateX(180deg);
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      @keyframes flipCard {
+
+        0%,
+        45% {
+          transform: rotateX(0deg);
         }
 
-        html, body {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Exo 2', sans-serif;
-            background-color: #1B3C87;
+        50%,
+        95% {
+          transform: rotateX(180deg);
         }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        100% {
+          transform: rotateX(0deg);
         }
+      }
 
+      .name {
+        font-size: clamp(18px, 4vw, 24px);
+        font-weight: 500;
+        color: #1B3C87;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .title {
+        font-size: clamp(16px, 3.5vw, 20px);
+        color: #1B3C87;
+        text-align: center;
+      }
+
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .contact a {
+        color: #00B2E3;
+        font-size: clamp(14px, 3vw, 16px);
+        text-decoration: none;
+        transition: color 0.3s;
+        text-align: center;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+        color: #1B3C87;
+      }
+
+      .profile-photo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .website-link {
+        color: #ffffff;
+        font-size: clamp(16px, 3.5vw, 20px);
+        text-decoration: none;
+      }
+
+      .website-link:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        color: #ffffff;
+        font-size: 11px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
         .card-container {
-            width: 100%;
-            max-width: 500px;
-            perspective: 1000px;
-        }
-
-        .card {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: flipCard 16s infinite cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card.flip {
-            animation: none;
-        }
-
-        .card.flip .card-face {
-            transform: rotateX(180deg);
+          width: 90%;
         }
 
         .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          padding: 15px;
         }
-
-        .card-face-front {
-            background-color: #ffffff;
-            gap: 15px;
-        }
-
-        .card-face-back {
-            background-color: #00B2E3;
-            transform: rotateX(180deg);
-            color: #ffffff;
-            text-align: center;
-        }
-
-        @keyframes flipCard {
-            0%, 45% {
-                transform: rotateX(0deg);
-            }
-            50%, 95% {
-                transform: rotateX(180deg);
-            }
-            100% {
-                transform: rotateX(0deg);
-            }
-        }
-
-        .profile-photo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
-
-        .name {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 500;
-            color: #1B3C87;
-            text-align: center;
-        }
-
-        .title {
-            font-size: clamp(1.25rem, 3.5vw, 1.5rem);
-            color: #1B3C87;
-            text-align: center;
-        }
-
-        .contact a {
-            color: #00B2E3;
-            font-size: clamp(1rem, 3vw, 1.125rem);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-            color: #1B3C87;
-        }
-
-        .website-link {
-            color: #ffffff;
-            font-size: clamp(1rem, 3vw, 1.125rem);
-            text-decoration: none;
-        }
-
-        .website-link:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: auto;
-            color: #ffffff;
-            font-size: 0.75rem;
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            .card-container {
-                width: 90%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <header>
-        <h1 class="visually-hidden">Fábio Carvalho's Business Card</h1>
-    </header>
-    <main>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-face card-face-front">
-                    <h2 class="name">Fábio Carvalho</h2>
-                    <p class="title">Software Engineer</p>
-                    <div class="contact">
-                        <a href="mailto:fmrgcarvalho@gmail.com" aria-label="Email Fábio Carvalho">fmrgcarvalho@gmail.com</a>
-                        <a href="tel:+351911981920" aria-label="Call Fábio Carvalho">+351 939 888 254</a>
-                    </div>
-                    <img src="https://via.placeholder.com/60" 
-                         alt="Portrait of Fábio Carvalho" 
-                         class="profile-photo" 
-                         loading="lazy">
-                </div>
-                <div class="card-face card-face-back">
-                    <p>For more information, visit my website:<br><br>
-                        <a href="https://fmrgcarvalho.com" target="_blank" class="website-link" aria-label="Visit Fábio Carvalho's website">fmrgcarvalho.com</a>
-                    </p>
-                </div>
-            </div>
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-face card-face-front">
+          <h1 class="name">Fábio Carvalho</h1>
+          <p class="title">Software Engineer 🔹 Project Management <br> Scrum Master </p>
+          <div class="contact">
+            <a href="mailto:fmrgcarvalho@gmail.com?subject=Contact&body=Hello Fábio,">fmrgcarvalho@gmail.com</a>
+            <a href="tel:+351911981920">+351 939 888 254</a>
+          </div>
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQGcZ-L04fUDbw/profile-displayphoto-shrink_200_200/B4DZRC2ZR4GkAY-/0/1736288343618?e=1743638400&v=beta&t=RjB9mFC0jEblHepo_uus5nb-JR_ygdDI-7bLQhmFDKg" alt="Fábio Carvalho's Photo" class="profile-photo">
         </div>
-    </main>
+        <div class="card-face card-face-back">
+          <a href="https://wa.me/351939888254" class="website-link" target="_blank">WhatsApp</a>
+          <br />
+          <a href="https://linkedin.com/in/fmrgcarvalho" target="_blank" class="website-link">LinkedIn</a>
+          <br />
+          <a href="https://medium.com/@fmrgcarvalho" target="_blank" class="website-link">Medium</a>
+          <br />
+          <!--<a href="https://fmrgcarvalho.com" target="_blank" class="website-link">fmrgcarvalho.com</a>-->
+          </p>
+        </div>
+      </div>
+    </div>
     <footer class="footer">
-        <p>Made by Fábio Carvalho (2025)</p>
+      <p>Made by Fábio Carvalho (2025)</p>
     </footer>
-
     <script>
-        const card = document.querySelector('.card');
+      const vCardData = BEGIN: VCARD
+      VERSION: 3.0
+      N: Carvalho;
+      Fabio;;;
+      FN: Fabio Carvalho
+      ORG: Software Engineer
+      TITLE: Consultant
+      TEL;
+      TYPE = WORK, VOICE, CELL: +351939888254
+      EMAIL;
+      TYPE = WORK: fmrcarvalho @gmail.com
+      END: VCARD;
+      const card = document.querySelector('.card');
+      let touchStartY = 0;
+      let touchEndY = 0;
 
-        card.addEventListener('click', () => {
-            card.classList.toggle('flip');
-        });
+      function handleManualFlip() {
+        card.style.animation = 'none';
+        card.style.transform = card.style.transform === 'rotateX(180deg)' ? 'rotateX(0deg)' : 'rotateX(180deg)';
+      }
+      card.addEventListener('touchstart', e => {
+        touchStartY = e.changedTouches[0].screenY;
+      });
+      card.addEventListener('touchend', e => {
+        touchEndY = e.changedTouches[0].screenY;
+        if (Math.abs(touchStartY - touchEndY) > 30) {
+          handleManualFlip();
+        }
+      });
+      card.addEventListener('click', handleManualFlip);
     </script>
-</body>
+  </body>
 </html>

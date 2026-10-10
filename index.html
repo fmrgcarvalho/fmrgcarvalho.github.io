@@ -22,6 +22,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#apps">Apps</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#philosophy">Mindset</a></li>
   </ul>
@@ -666,6 +667,78 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- APPS -->
+<!-- To add an app: copy an <article class="project-card app-card"> block into the right group.
+     Badges: "app-badge oss" (open source) · "app-badge licensed" (commercial) · "app-badge status" (version / stage). -->
+<section id="apps">
+  <div class="container">
+    <div class="section-label">Open source &amp; apps</div>
+    <h2 class="section-title">Software I ship myself.</h2>
+    <p class="apps-intro">Apps I design, build and maintain on my own time. Open source projects are free to use, inspect and fork; licensed apps are commercial products.</p>
+
+    <div class="apps-group">
+      <h3 class="apps-group-head">Open source</h3>
+      <div class="apps-grid">
+
+        <article class="project-card app-card green reveal">
+          <div class="project-header">
+            <div class="project-icon" style="background:rgba(16,185,129,.15)" aria-hidden="true">🎙️</div>
+            <div class="app-badges">
+              <span class="app-badge oss">Open source</span>
+              <span class="app-badge status">v0.1 · early</span>
+            </div>
+          </div>
+          <h4 class="project-name">SpeechDesk</h4>
+          <p class="project-desc">Voice dictation for Windows, 100% local and free. Hold a key, speak, and the text is typed wherever the cursor is — in any app. Runs NVIDIA Parakeet TDT 0.6B v3 locally via sherpa-onnx (25 European languages, including English and Portuguese), with optional local AI clean-up (Qwen 2.5 via llama.cpp) and Portuguese→English translation. No audio leaves the machine.</p>
+          <div class="project-stack">
+            <span class="project-tech">.NET 8</span>
+            <span class="project-tech">WPF</span>
+            <span class="project-tech">C#</span>
+            <span class="project-tech">sherpa-onnx</span>
+            <span class="project-tech">llama.cpp</span>
+          </div>
+          <div class="app-links">
+            <a href="https://fmrgcarvalho.github.io/speechdesk/" target="_blank" rel="noopener" class="app-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>Project page</a>
+            <a href="https://github.com/fmrgcarvalho/speechdesk" target="_blank" rel="noopener" class="app-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>Code</a>
+          </div>
+        </article>
+
+        <article class="project-card app-card blue reveal">
+          <div class="project-header">
+            <div class="project-icon" style="background:rgba(59,130,246,.15)" aria-hidden="true">📊</div>
+            <div class="app-badges">
+              <span class="app-badge oss">Open source · MIT</span>
+            </div>
+          </div>
+          <h4 class="project-name">G-FinanceSuite</h4>
+          <p class="project-desc">Browser-based duplicate detection and financial reconciliation for Excel, CSV and JSON files. Dashboards, filters and multi-format export, built to handle 340k+ records.</p>
+          <div class="project-stack">
+            <span class="project-tech">Browser-based</span>
+            <span class="project-tech">Excel</span>
+            <span class="project-tech">CSV</span>
+            <span class="project-tech">JSON</span>
+          </div>
+          <div class="app-links">
+            <a href="https://fmrgcarvalho.github.io/G-FinanceSuite/" target="_blank" rel="noopener" class="app-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>Live app</a>
+            <a href="https://github.com/fmrgcarvalho/G-FinanceSuite" target="_blank" rel="noopener" class="app-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>Code</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="apps-group">
+      <h3 class="apps-group-head">Licensed</h3>
+      <div class="app-soon reveal">
+        <span class="app-badge licensed">Coming soon</span>
+        <p><strong>Commercial apps are in the works.</strong> Tools with a paid licence will be listed here once they are ready.</p>
+      </div>
     </div>
   </div>
 </section>
